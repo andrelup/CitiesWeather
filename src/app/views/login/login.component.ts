@@ -8,7 +8,7 @@ import { StorageService } from '../../services/storage.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loading: boolean = false;
   loginForm: FormGroup;
   errorLogin: boolean = false;
@@ -19,9 +19,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     })
   }
-  ngOnInit(): void {
-    this.loading
-  }
+
   login() {
     const username = this.loginForm.value.username
     const password = this.loginForm.value.password;

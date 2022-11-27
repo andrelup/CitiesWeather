@@ -7,20 +7,13 @@ import { StorageService } from 'src/app/services/storage.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   constructor(private storageService: StorageService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
-  isLogged() {
-    return this.storageService.getItem('username') ? true : false;
-  }
   logout() {
     this.storageService.removeItem('username')
     this.router.navigate(['/home']);
   }
-  isNotLogginURL() {
-    return this.router.url === '/login' ? false : true;
-  }
+
 }

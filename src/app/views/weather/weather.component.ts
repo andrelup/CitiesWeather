@@ -7,24 +7,12 @@ import { City } from '../../model/city';
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.css']
 })
-export class WeatherComponent implements OnInit {
+export class WeatherComponent {
   cities: City[] = cities;
   favouritesCities: City[] = [];
   cityShowed?: City;
   constructor() { }
 
-  ngOnInit(): void {
-    // this.cityShowed = {
-    //   "id": 2509300,
-    //   "name": "Zújar",
-    //   "state": "",
-    //   "country": "ES",
-    //   "coord": {
-    //     "lon": -2.84197,
-    //     "lat": 37.54285
-    //   }
-    // };
-  }
   citySelected(city: City) {
     this.cityShowed = city;
   }
