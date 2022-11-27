@@ -13,7 +13,7 @@ export class NavbarComponent {
 
   logout() {
     this.storageService.removeItem('username')
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
   }
 
 }

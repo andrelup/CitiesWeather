@@ -19,8 +19,6 @@ export class DetailsComponent {
   }
   _city: City | undefined;
 
-  // details: any;
-  // description?: string;
   detailsForm: FormGroup;
   iconUrl: string = 'http://openweathermap.org/img/wn/';
   loadingDetails: boolean = false;
@@ -43,7 +41,6 @@ export class DetailsComponent {
     this.weatherService.getCityWeatherById(city.id).subscribe({
       next: (details: any) => {
         console.log('[getDetails] details: ', details);
-        // this.details = details;
         this.iconUrl += details['weather'][0].icon + '.png'
         const { temp, temp_min, temp_max } = details.main;
         let description = details.weather[0].description;
