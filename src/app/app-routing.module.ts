@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { WeatherComponent } from './weather/weather.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'weather', component: WeatherComponent },
+  { path: 'weather', component: WeatherComponent, canActivate: [AuthGuard] },
   { path: '**', component: LoginComponent },
 ];
 
