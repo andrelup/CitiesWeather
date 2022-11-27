@@ -9,7 +9,7 @@ import { WeatherService } from 'src/app/services/weather.service';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit, OnChanges {
+export class DetailsComponent {
 
   @Input()
   get city(): City { return this.city };
@@ -24,6 +24,9 @@ export class DetailsComponent implements OnInit, OnChanges {
   iconUrl: string = 'http://openweathermap.org/img/wn/';
   loadingDetails: boolean = false;
   errorDetails: boolean = false;
+
+  lat?: number;
+  lon?: number;
   constructor(private weatherService: WeatherService, private fb: FormBuilder) {
     this.detailsForm = this.fb.group({
       temp: [{ value: '' }],
@@ -32,13 +35,9 @@ export class DetailsComponent implements OnInit, OnChanges {
     })
   }
 
-  ngOnInit(): void {
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-
-  }
   getDetails(city: City) {
     this.loadingDetails = true;
+    this.iconUrl = 'http://openweathermap.org/img/wn/';
     this.weatherService.getCityWeatherById(city.id).subscribe({
       next: details => {
         console.log('[getDetails] details: ', details);
@@ -51,6 +50,8 @@ export class DetailsComponent implements OnInit, OnChanges {
           temp_max,
           temp_min
         });
+        this.lat = this.details.coord.lat
+        this.lon = this.details.coord.lon
         this.loadingDetails = false;
       },
       error: error => {

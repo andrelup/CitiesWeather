@@ -22,6 +22,7 @@ import { LoginComponent } from './login/login.component';
 import { WeatherComponent } from './weather/weather.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MapsComponent } from './components/maps/maps.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     DetailsComponent,
     LoginComponent,
     WeatherComponent,
-    NavbarComponent
+    NavbarComponent,
+    MapsComponent
   ],
   imports: [
     BrowserModule,
