@@ -1,0 +1,5 @@
+.horizontal-scroll-wrapper {
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }

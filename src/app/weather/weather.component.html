@@ -1,6 +1,18 @@
-<app-navbar></app-navbar>
 
-<p>weather works!</p>
-<div><span class="text-left"><app-select></app-select></span><span class="text-rigth">favorites component</span></div>
-<div>DetailsComponent</div>
-<div>MapsComponent</div>
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-6">
+            <app-select></app-select>
+        </div>
+        <div class="col-6">
+            <app-favorites></app-favorites>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <app-details></app-details>
+        </div>
+    </div>
+    <div>MapsComponent</div>
+</div>

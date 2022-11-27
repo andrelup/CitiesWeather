@@ -1,1 +1,10 @@
-<p>favorites works!</p>
+<h3>Ciudades preferidas:</h3>
+<div class="card">
+    <div class="card-body horizontal-scroll-wrapper">
+        <mat-selection-list #shoes [multiple]="false" [(ngModel)]="selectedCity" (ngModelChange)="cityChanged($event)">
+            <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
+              {{shoe}}
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+</div>
