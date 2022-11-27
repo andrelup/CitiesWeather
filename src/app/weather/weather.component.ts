@@ -14,6 +14,16 @@ export class WeatherComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.cityShowed = {
+      "id": 2509300,
+      "name": "Zújar",
+      "state": "",
+      "country": "ES",
+      "coord": {
+        "lon": -2.84197,
+        "lat": 37.54285
+      }
+    };
   }
   citySelected(city: City) {
     console.log('City: ', city);

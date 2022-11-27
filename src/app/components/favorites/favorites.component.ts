@@ -20,6 +20,7 @@ export class FavoritesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
   cityChanged(selectedCities: number[]) {
     console.log('City id: ', selectedCities);
