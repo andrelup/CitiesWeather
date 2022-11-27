@@ -1,22 +1,58 @@
 
-<div class="card mt-2"*ngIf="_city">
-    <div class="card-header">
-        <h2 >
-            Ciudad: 
+<div class="text-center mt-3" *ngIf="loadingDetails" >
+    <mat-spinner class="spinner" diameter="50"></mat-spinner>
+    <span class="loading-text" > Cargando...</span>
+</div>
+<div *ngIf="errorDetails " class="alert alert-danger"> No fue posible obtener los datos</div>
+<div class="card mt-3"*ngIf="_city && !loadingDetails && !errorDetails">
+    <div class="card-header main-background-color" >
+        <h2 class="m-0">
             {{_city.name}}
+            <img [src]="iconUrl" >
         </h2>
     </div>
     <div class="card-body">
-        <div class="row">
-            <div class="col-12">
-
-                   
-                    <div class="text-center" *ngIf="loadingDetails">
-                        <mat-spinner class="spinner" diameter="50"></mat-spinner>
-                        <span class="loading-text" > Cargando...</span>
+        <form  [formGroup]="detailsForm" aria-disabled="true">
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <mat-form-field class="all-width" appearance="outline">
+                        <mat-label>Temperatura media</mat-label>
+                        <input type="text" matInput autocomplete="off" formControlName="temp" readonly>
+                    </mat-form-field>
+                </div>
+            <!-- </div>
+            <div class="row"> -->
+                <div class="col-6 col-lg-3">
+                    <mat-form-field class="all-width" appearance="outline" disabled>
+                        <mat-label>Temperatura máxima</mat-label>
+                        <input type="text" matInput autocomplete="off" formControlName="temp_max" readonly>
+                    </mat-form-field>
+                </div>
+            <!-- </div>
+            <div class="row"> -->
+                <div class="col-6 col-lg-3">
+                    <mat-form-field class="all-width" appearance="outline">
+                        <mat-label>Temperatura mínima</mat-label>
+                        <input type="text" matInput autocomplete="off" formControlName="temp_min"readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+        <!-- <div class="row">
+            <div class="col-6 col-lg-3" >
+                
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Temperatura</label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
                     </div>
                 
             </div>
-        </div>
+            <div class="col-6 col-lg-3" >
+                <label for="staticEmail" class="col-sm-2 col-form-label">Temperatura</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                </div>
+            </div>
+        </div> -->
     </div>
 </div>

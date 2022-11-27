@@ -1,33 +1,26 @@
-<!-- <div class="container-fluid">
-    <div class="row mt-5"> -->
-        <div class="center">
 
-            <div class="text-center" *ngIf="loading">
-                <mat-spinner class="spinner" diameter="50"></mat-spinner>
-            <span class="loading-text" > Cargando...</span>
-        </div>
-        <!-- <div class="offset-3 offset-md-4 offset-lg-5 col-6 col-md-4 col-lg-3" *ngIf="!loading" > -->
-            <div class="card" *ngIf="!loading">
-                <div class="card-body ">
-
-                    <form  [formGroup]="loginForm" (ngSubmit)="login()">
-                    <h1>Login</h1>
-                    <div *ngIf="errorLogin" class="alert alert-danger"> Usuario o contraseña incorrecta </div>
-                    <mat-form-field class="all-width">
-                        <mat-label>User</mat-label>
-                        <input type="text" matInput autocomplete="off" formControlName="username">
-                    </mat-form-field>
-                    <mat-form-field class="all-width">
-                        <mat-label>password</mat-label>
-                        <input type="password" matInput autocomplete="off" formControlName="password">
-                    </mat-form-field>
-                    <br>
-                    <div class="text-center">
-                        <button class="btn-mercadona" type="submit" [disabled]="loginForm.invalid" mat-raised-button>Acceder</button>
-                    </div>
-                </form>
+<div class="center">
+    <div class="text-center" *ngIf="loading">
+        <mat-spinner class="spinner" diameter="50"></mat-spinner>
+    <span class="loading-text" > Cargando...</span>
+</div>
+<div class="card" *ngIf="!loading">
+    <div class="card-body ">
+        <form  [formGroup]="loginForm" (ngSubmit)="login()">
+            <h1>Login</h1>
+            <div *ngIf="errorLogin" class="alert alert-danger"> Usuario o contraseña incorrecta </div>
+            <mat-form-field class="all-width">
+                <mat-label>User</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="username">
+            </mat-form-field>
+            <mat-form-field class="all-width">
+                <mat-label>password</mat-label>
+                <input type="password" matInput autocomplete="off" formControlName="password">
+            </mat-form-field>
+            <br>
+            <div class="text-center">
+                <button class="btn-mercadona" type="submit" [disabled]="loginForm.invalid" mat-raised-button>Acceder</button>
             </div>
-        </div>
+        </form>
     </div>
-    <!-- </div>
-</div> -->
+</div>
