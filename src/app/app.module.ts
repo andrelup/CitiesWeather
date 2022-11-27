@@ -17,6 +17,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { SelectComponent } from './components/select/select.component';
 import { LoginComponent } from './login/login.component';
 import { WeatherComponent } from './weather/weather.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { WeatherComponent } from './weather/weather.component';
     FavoritesComponent,
     DetailsComponent,
     LoginComponent,
-    WeatherComponent
+    WeatherComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
