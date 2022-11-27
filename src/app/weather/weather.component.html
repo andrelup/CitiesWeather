@@ -3,15 +3,15 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-6">
-            <app-select></app-select>
+            <app-select [cities]="cities" (citySelectedEvent)="cityAdd($event)"></app-select>
         </div>
         <div class="col-6">
-            <app-favorites></app-favorites>
+            <app-favorites [favouritesCities]="favouritesCities" (citySelectedEvent)="citySelected($event)"></app-favorites>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <app-details></app-details>
+            <app-details [city]="cityShowed"></app-details>
         </div>
     </div>
     <div>MapsComponent</div>

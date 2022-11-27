@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { City } from 'src/app/model/city';
@@ -11,9 +12,13 @@ import { cities } from 'src/assets/data/cities';
   styleUrls: ['./select.component.css']
 })
 export class SelectComponent implements OnInit {
-  myControl = new FormControl('');
-  options: City[] = cities;
+  @Input()
+  cities: City[] = cities;
   filteredOptions?: Observable<City[]>;
+  @Output()
+  citySelectedEvent: EventEmitter<City> = new EventEmitter<City>();
+
+  myControl = new FormControl('');
   constructor() { }
 
   ngOnInit(): void {
@@ -24,8 +29,23 @@ export class SelectComponent implements OnInit {
     );
   }
   private _filter(value: string): City[] {
-    const filterValue = value.toLowerCase();
+    if (value && typeof (value) === 'string') {
 
-    return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
+      const filterValue = value.toLowerCase();
+
+      return this.cities.filter(option => option.name.toLowerCase().includes(filterValue));
+    }
+    return cities;
   }
+  getOptionText(option: any) {
+    console.log('option: ', option);
+    return option.name;
+  }
+  citySelected(optionSelected: MatAutocompleteSelectedEvent) {
+    console.log('optionSelected: ', optionSelected);
+    let city = optionSelected.option.value;
+    console.log('city: ', city);
+    this.citySelectedEvent.emit(city);
+  }
+
 }

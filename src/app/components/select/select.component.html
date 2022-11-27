@@ -8,8 +8,8 @@
              matInput
              [formControl]="myControl"
              [matAutocomplete]="auto">
-      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.id">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="citySelected($event)" [displayWith]="getOptionText">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
           {{option.name}}
         </mat-option>
       </mat-autocomplete>

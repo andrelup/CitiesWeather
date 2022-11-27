@@ -1,9 +1,9 @@
 <h3>Ciudades preferidas:</h3>
-<div class="card">
+<div class="card" *ngIf="favouritesCities">
     <div class="card-body horizontal-scroll-wrapper">
-        <mat-selection-list #shoes [multiple]="false" [(ngModel)]="selectedCity" (ngModelChange)="cityChanged($event)">
-            <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
-              {{shoe}}
+        <mat-selection-list #citiesList [multiple]="false" [(ngModel)]="selectedCity" (ngModelChange)="cityChanged($event)">
+            <mat-list-option *ngFor="let city of favouritesCities" [value]="city.id">
+              {{city.name}}
             </mat-list-option>
         </mat-selection-list>
     </div>
