@@ -3,7 +3,12 @@
     <div class="card-body horizontal-scroll-wrapper">
         <mat-selection-list #citiesList [multiple]="false" [(ngModel)]="selectedCity" (ngModelChange)="cityChanged($event)">
             <mat-list-option *ngFor="let city of favouritesCities" [value]="city.id">
-              {{city.name}}
+                <div >
+                    {{city.name}}
+                    <button mat-icon-button color="warn" class="icon-trash" (click)="deleteFavourite(city)">
+                        <mat-icon>delete_forever</mat-icon>
+                    </button>    
+                </div>
             </mat-list-option>
         </mat-selection-list>
     </div>

@@ -6,7 +6,7 @@
             <app-select [cities]="cities" (citySelectedEvent)="cityAdd($event)"></app-select>
         </div>
         <div class="col-6">
-            <app-favorites [favouritesCities]="favouritesCities" (citySelectedEvent)="citySelected($event)"></app-favorites>
+            <app-favorites [(favouritesCities)]="favouritesCities" (citySelectedEvent)="citySelected($event)" (favouriteRemoved)="favouriteRemoved($event)"></app-favorites>
         </div>
     </div>
     <div class="row" *ngIf="cityShowed">

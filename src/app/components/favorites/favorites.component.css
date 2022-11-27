@@ -2,4 +2,11 @@
     height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
-  }
+}
+
+.icon-trash {
+  margin-right: 0px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

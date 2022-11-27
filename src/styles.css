@@ -4,7 +4,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .all-width {
-    width: 100%
+    width: 100% ;
 }
 .center {
     position: absolute;
@@ -20,4 +20,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .loading-text {
     top: 10px;
     position: relative;
+}
+.spacer {
+  flex: 1 1 auto;
 }
