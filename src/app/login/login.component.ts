@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   fakeLoading() {
     this.loading = true;
     setTimeout(() => {
-      this.router.navigate(['products'])
+      this.router.navigate(['weather'])
     }, 1500)
   }
   setErrorLoading() {

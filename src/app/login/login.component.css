@@ -1,0 +1,8 @@
+.spinner {
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+.loading-text {
+    top: 10px;
+    position: relative;
+}
