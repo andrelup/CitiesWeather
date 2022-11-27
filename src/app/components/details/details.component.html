@@ -9,11 +9,19 @@
         <h2 class="m-0">
             {{_city.name}}
             <img [src]="iconUrl" >
+           
         </h2>
+        <!-- <div> {{description}}</div> -->
     </div>
     <div class="card-body">
         <form  [formGroup]="detailsForm" aria-disabled="true">
             <div class="row">
+                <div class="col-6 col-lg-3">
+                    <mat-form-field class="all-width" appearance="outline">
+                        <mat-label>Descripcion</mat-label>
+                        <input type="text" matInput autocomplete="off" formControlName="description" readonly>
+                    </mat-form-field>
+                </div>
                 <div class="col-6 col-lg-3">
                     <mat-form-field class="all-width" appearance="outline">
                         <mat-label>Temperatura media</mat-label>

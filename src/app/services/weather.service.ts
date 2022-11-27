@@ -8,11 +8,12 @@ export class WeatherService {
   private URL = 'https://api.openweathermap.org/data/2.5/weather';
   private APPID = '5b4a5fb7fff1a8f5a3c0cd68dc4e9a5b';
   private units = 'metric';
+  private language = 'sp';
 
   constructor(private http: HttpClient) { }
 
   getCityWeatherById(id: number) {
-    return this.http.get(this.URL + '?id=' + id + '&units=' + this.units + '&appid=' + this.APPID)
+    return this.http.get(this.URL + '?id=' + id + '&units=' + this.units + '&appid=' + this.APPID + '&lang=' + this.language)
   }
 
 }

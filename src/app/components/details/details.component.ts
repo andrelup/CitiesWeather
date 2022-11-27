@@ -19,7 +19,8 @@ export class DetailsComponent {
   }
   _city: City | undefined;
 
-  details: any
+  // details: any;
+  // description?: string;
   detailsForm: FormGroup;
   iconUrl: string = 'http://openweathermap.org/img/wn/';
   loadingDetails: boolean = false;
@@ -29,6 +30,7 @@ export class DetailsComponent {
   lon?: number;
   constructor(private weatherService: WeatherService, private fb: FormBuilder) {
     this.detailsForm = this.fb.group({
+      description: [{ value: '' }],
       temp: [{ value: '' }],
       temp_max: [{ value: '' }],
       temp_min: [{ value: '' }]
@@ -39,19 +41,22 @@ export class DetailsComponent {
     this.loadingDetails = true;
     this.iconUrl = 'http://openweathermap.org/img/wn/';
     this.weatherService.getCityWeatherById(city.id).subscribe({
-      next: details => {
+      next: (details: any) => {
         console.log('[getDetails] details: ', details);
-        this.details = details;
-        this.iconUrl += this.details.weather[0].icon + '.png'
-        const { temp, temp_min, temp_max } = this.details.main;
+        // this.details = details;
+        this.iconUrl += details['weather'][0].icon + '.png'
+        const { temp, temp_min, temp_max } = details.main;
+        let description = details.weather[0].description;
 
         this.detailsForm.patchValue({
+          description,
           temp,
           temp_max,
           temp_min
         });
-        this.lat = this.details.coord.lat
-        this.lon = this.details.coord.lon
+        this.lat = details.coord.lat
+        this.lon = details.coord.lon
+
         this.loadingDetails = false;
       },
       error: error => {
