@@ -19,6 +19,7 @@ import { SelectComponent } from './components/select/select.component';
 import { LoginComponent } from './login/login.component';
 import { WeatherComponent } from './weather/weather.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatButtonModule,
     MatSnackBarModule,
     MatIconModule,
+    MatAutocompleteModule,
     MatProgressSpinnerModule
   ],
   providers: [],
