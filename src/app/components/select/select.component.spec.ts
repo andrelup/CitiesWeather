@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppModule } from 'src/app/app.module';
 
 import { SelectComponent } from './select.component';
 
@@ -8,9 +9,10 @@ describe('SelectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SelectComponent ]
+      declarations: [SelectComponent],
+      imports: [AppModule]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SelectComponent);
     component = fixture.componentInstance;
