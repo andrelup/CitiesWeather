@@ -23,8 +23,7 @@ export class LoginComponent {
   login() {
     const username = this.loginForm.value.username
     const password = this.loginForm.value.password;
-    console.log('username: ', username);
-    console.log('password: ', password);
+
     if (username === 'admin' && password === 'admin') {
       this.storageService.setItem('username', username)
       this.fakeLoading();

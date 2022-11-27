@@ -24,9 +24,7 @@ export class FavoritesComponent {
 
 
   cityChanged(selectedCities: number[]) {
-    console.log('City id: ', selectedCities);
     let city = this.favouritesCities.filter(item => item.id === selectedCities[0])
-    console.log('City: ', city);
     this.citySelectedEvent.emit(city[0]);
   }
   deleteFavourite(city: City) {

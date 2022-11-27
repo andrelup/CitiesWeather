@@ -38,13 +38,10 @@ export class SelectComponent implements OnInit {
     return cities;
   }
   getOptionText(option: any) {
-    console.log('option: ', option);
     return option.name;
   }
   citySelected(optionSelected: MatAutocompleteSelectedEvent) {
-    console.log('optionSelected: ', optionSelected);
     let city = optionSelected.option.value;
-    console.log('city: ', city);
     this.citySelectedEvent.emit(city);
   }
 
