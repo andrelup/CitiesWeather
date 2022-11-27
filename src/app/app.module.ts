@@ -21,6 +21,7 @@ import { SelectComponent } from './components/select/select.component';
 import { LoginComponent } from './login/login.component';
 import { WeatherComponent } from './weather/weather.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatToolbarModule,
