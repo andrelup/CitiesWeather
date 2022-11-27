@@ -19,7 +19,7 @@ export class WeatherComponent {
   favouriteRemoved(city: City) {
     this.cities.push(city);
   }
-  cityAdd(city: City) {
+  favouriteAdd(city: City) {
     this.favouritesCities.push(city);
     for (let i = 0; i < this.cities.length; i++) {
       if (this.cities[i].id === city.id) {

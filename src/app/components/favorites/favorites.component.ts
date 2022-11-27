@@ -22,7 +22,6 @@ export class FavoritesComponent {
 
   constructor() { }
 
-
   cityChanged(selectedCities: number[]) {
     let city = this.favouritesCities.filter(item => item.id === selectedCities[0])
     this.citySelectedEvent.emit(city[0]);
